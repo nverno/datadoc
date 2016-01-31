@@ -2,8 +2,8 @@
 % Please edit documentation in R/describe.R
 \name{roxy_tabular}
 \alias{roxy_tabular}
-\title{Similar to http://r-pkgs.had.co.nz/man.html to make tabular roxy output.
-Roxygen tabulate}
+\title{Roxygen tabulate
+Similar to http://r-pkgs.had.co.nz/man.html to make tabular roxy output.}
 \usage{
 roxy_tabular(df, ...)
 }
@@ -16,7 +16,7 @@ roxy_tabular(df, ...)
 character vector of lines for table
 }
 \description{
-Similar to http://r-pkgs.had.co.nz/man.html to make tabular roxy output.
 Roxygen tabulate
+Similar to http://r-pkgs.had.co.nz/man.html to make tabular roxy output.
 }
 

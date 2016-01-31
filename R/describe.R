@@ -1,8 +1,8 @@
 ##' @include format.R
 NULL
 
-##' Similar to http://r-pkgs.had.co.nz/man.html to make tabular roxy output.
 ##' Roxygen tabulate
+##' Similar to http://r-pkgs.had.co.nz/man.html to make tabular roxy output.
 ##'
 ##' @param df data.frame
 ##' @param ... arguments passed to format
@@ -51,7 +51,7 @@ roxy_tabular <- function(df, ...) {
 ##' @importFrom roxygen2 default_data_format
 ##' @return Vector of lines for roxygen metadata, or write to file if \code{outfile}.
 ##' @export
-roxy_itemize <- function(data, text, file, outfile, fileEncoding="",
+describe <- function(data, text, file, outfile, fileEncoding="",
                          encoding="unknown", comment.char="##'",
                          start="\\itemize {", end="}", item="\\item %s:",
                          indent=3, sublist=NULL, add_tables=NULL, ...) {
