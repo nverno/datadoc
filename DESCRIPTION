@@ -1,0 +1,14 @@
+Package: datadoc
+Title: Helpers to document datasets on the fly
+Version: 0.0.0.9000
+Authors@R: person("Noah", "Peart", email = "noah.v.peart@gmail.com", role = c("aut", "cre"))
+Description: Quick descriptive documentation of datasets in roxy style.
+Depends: 
+    R (>= 3.2.0)
+License: GPL-2
+LazyData: true
+Collate: 
+    'format.R'
+    'describe.R'
+RoxygenNote: 5.0.1
+Imports: roxygen2
