@@ -4,10 +4,10 @@
 \alias{describe}
 \title{Create dataset descriptions for roxygen.  The workhorse.}
 \usage{
-describe(data, text, file, outfile, fileEncoding = "", encoding = "unknown",
-  comment.char = "##'", start = "\\\\itemize {", end = "}",
-  item = "\\\\item \%s:", indent = 3, sublist = NULL, add_tables = NULL,
-  ...)
+describe(data, text, file, outfile, fileEncoding = "", envir = NULL,
+  encoding = "unknown", comment.char = "##'", start = "\\\\itemize {",
+  end = "}", item = "\\\\item \%s:", indent = 3, sublist = NULL,
+  add_tables = NULL, ...)
 }
 \arguments{
 \item{data}{Input data}
@@ -19,6 +19,8 @@ describe(data, text, file, outfile, fileEncoding = "", encoding = "unknown",
 \item{outfile}{Optional location of file to write output}
 
 \item{fileEncoding}{File encoding}
+
+\item{envir}{Environment to find data}
 
 \item{encoding}{encoding}
 

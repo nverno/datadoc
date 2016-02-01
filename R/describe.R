@@ -34,6 +34,7 @@ roxy_tabular <- function(df, ...) {
 ##' @param file Optional location of file with description of data
 ##' @param outfile Optional location of file to write output
 ##' @param fileEncoding File encoding
+##' @param envir Environment to find data
 ##' @param encoding encoding
 ##' @param comment.char prefix character for roxygen template (default )
 ##' @param start Start of itemized list (default "\\\\itemize \{")
@@ -51,10 +52,14 @@ roxy_tabular <- function(df, ...) {
 ##' @importFrom roxygen2 default_data_format
 ##' @return Vector of lines for roxygen metadata, or write to file if \code{outfile}.
 ##' @export
-describe <- function(data, text, file, outfile, fileEncoding="",
+describe <- function(data, text, file, outfile, fileEncoding="", envir=NULL,
                          encoding="unknown", comment.char="##'",
                          start="\\itemize {", end="}", item="\\item %s:",
                          indent=3, sublist=NULL, add_tables=NULL, ...) {
+  if (!is.null(envir)) {
+    out_name <- data
+    data <- get(data, envir=envir)
+  }
   if (!inherits(data, 'data.frame')) stop('Data doesn\'t inherit from data.frame.')
   if (missing(file) && missing(text)) {
     file <- textConnection(deparse(substitute(data)), encoding="UTF-8")
@@ -113,14 +118,14 @@ describe <- function(data, text, file, outfile, fileEncoding="",
         paste(in1, end, collapse=''))
     })
   }
-  
+
   out <- c(preamble, 
     comment.char,
     form,
     paste(comment.char, start),
     unlist(res, use.names=FALSE),
     paste(comment.char, end),
-    sprintf('"%s"', deparse(substitute(data))))
+    sprintf('"%s"', if (!is.null(envir)) out_name else deparse(substitute(data))))
   
   if (!missing(outfile)) {
     if (!file.exists(outfile) || file.access(outfile, mode=2) == 0L) {
