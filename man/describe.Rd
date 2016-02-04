@@ -5,7 +5,7 @@
 \title{Create dataset descriptions for roxygen.  The workhorse.}
 \usage{
 describe(data, text, file, outfile, fileEncoding = "", envir = NULL,
-  encoding = "unknown", comment.char = "##'", start = "\\\\itemize {",
+  encoding = "unknown", comment.char = "##'", start = "\\\\itemize{",
   end = "}", item = "\\\\item \%s:", indent = 3, sublist = NULL,
   add_tables = NULL, ...)
 }

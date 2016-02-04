@@ -54,7 +54,7 @@ roxy_tabular <- function(df, ...) {
 ##' @export
 describe <- function(data, text, file, outfile, fileEncoding="", envir=NULL,
                          encoding="unknown", comment.char="##'",
-                         start="\\itemize {", end="}", item="\\item %s:",
+                         start="\\itemize{", end="}", item="\\item %s:",
                          indent=3, sublist=NULL, add_tables=NULL, ...) {
   if (!is.null(envir)) {
     out_name <- data
