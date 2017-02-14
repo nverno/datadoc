@@ -49,7 +49,7 @@ roxy_tabular <- function(df, ...) {
 ##' \dontrun{
 ##'   roxy_itemize(mtcars, text='Dataset about cars', outfile='temp.R', add_tables=TRUE)
 ##' }
-##' @importFrom roxygen2 default_data_format
+##' @importFrom roxygen2 object_format
 ##' @return Vector of lines for roxygen metadata, or write to file if \code{outfile}.
 ##' @export
 describe <- function(data, text, file, outfile, fileEncoding="", envir=NULL,
@@ -88,8 +88,8 @@ describe <- function(data, text, file, outfile, fileEncoding="", envir=NULL,
   preamble <- strwrap(paste(readLines(con=file, encoding=encoding), 
     collapse='\n'), prefix=comment.char, indent=1, exdent=1)
   
-  ## Add the @format part (roxygen2::default_data_format)
-  form <- strwrap(paste('@format', roxygen2::default_data_format(data)),
+  ## Add the @format part (roxygen2::object_format)
+  form <- strwrap(paste('@format', roxygen2::object_format(data)),
     indent=1, exdent=indent, prefix=comment.char)
 
   ## Create the items -- this can contain sublists for factor or character items
